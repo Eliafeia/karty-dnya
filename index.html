@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карты дня</title>
+    <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <h1 class="page-title">Выберите карту дня</h1>
+    
+    <div class="cards-container" id="cardsContainer">
+        <!-- Карты будут созданы через JavaScript -->
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Большая карта" class="modal-image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

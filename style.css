@@ -1,0 +1,168 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Сетка карточек */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили карточки */
+.card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: white;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#modalTitle {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+#modalDescription {
+    text-align: center;
+    color: #666;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Добавьте эти стили для отладки */
+.card {
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    border-color: gold;
+}
+
+/* Временные стили для проверки */
+.cards-container:empty::before {
+    content: "Карточки не создались! Проверьте JavaScript";
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
