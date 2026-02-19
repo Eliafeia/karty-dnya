@@ -43,10 +43,10 @@ body {
     text-align: center;
 }
 
-/* Сетка карточек */
+/* Сетка карточек - ВСЕГДА 3 КОЛОНКИ */
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Всегда 3 колонки */
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -64,6 +64,7 @@ body {
     position: relative;
     aspect-ratio: 2/3;
     border: 2px solid transparent;
+    width: 100%; /* Занимает всю ширину колонки */
 }
 
 .card::before {
@@ -108,7 +109,7 @@ body {
     color: gold;
     padding: 5px 10px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     z-index: 2;
 }
@@ -137,7 +138,7 @@ body {
     margin: 5% auto;
     padding: 30px;
     width: 90%;
-    max-width: 600px;
+    max-width: 900px;
     border-radius: 30px;
     position: relative;
     animation: slideIn 0.4s;
@@ -190,7 +191,7 @@ body {
     max-width: 300px;
     height: auto;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     border-radius: 20px;
     box-shadow: 0 20px 30px rgba(0,0,0,0.3);
     border: 4px solid gold;
@@ -305,6 +306,7 @@ body {
 }
 
 /* ========== МОБИЛЬНЫЕ НАСТРОЙКИ ========== */
+/* Везде оставляем 3 колонки, только меняем размеры */
 
 /* Планшеты */
 @media (max-width: 768px) {
@@ -326,7 +328,7 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Всё ещё 3 колонки */
         gap: 15px;
         padding: 15px;
     }
@@ -335,7 +337,7 @@ body {
         top: 5px;
         right: 5px;
         padding: 3px 8px;
-        font-size: 10px;
+        font-size: 12px;
     }
     
     .modal-content {
@@ -397,7 +399,7 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(3, 1fr); /* Для 10 карточек оставляем 2 в ряд */
+        grid-template-columns: repeat(3, 1fr); /* Всё ещё 3 колонки */
         gap: 8px;
         padding: 8px;
     }
@@ -410,7 +412,7 @@ body {
         top: 3px;
         right: 3px;
         padding: 2px 5px;
-        font-size: 8px;
+        font-size: 9px;
         border-radius: 10px;
     }
     
@@ -451,12 +453,12 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
+        grid-template-columns: repeat(3, 1fr); /* Всё ещё 3 колонки */
+        gap: 4px;
     }
     
     .card-number {
-        font-size: 7px;
+        font-size: 8px;
         padding: 1px 4px;
     }
     
@@ -468,7 +470,7 @@ body {
 /* Альбомная ориентация */
 @media (max-height: 480px) and (orientation: landscape) {
     .cards-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд в горизонтальном режиме */
+        grid-template-columns: repeat(3, 1fr); /* Всё ещё 3 колонки */
         gap: 10px;
     }
     
@@ -485,4 +487,3 @@ body {
         max-width: 150px;
     }
 }
-
