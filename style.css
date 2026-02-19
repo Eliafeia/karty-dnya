@@ -48,7 +48,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -134,10 +134,10 @@ body {
 
 .modal-content {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    margin: 3% auto;
+    margin: 5% auto;
     padding: 30px;
     width: 90%;
-    max-width: 900px;
+    max-width: 600px;
     border-radius: 30px;
     position: relative;
     animation: slideIn 0.4s;
@@ -186,13 +186,14 @@ body {
 }
 
 .modal-image {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
+    display: block;
+    margin: 0 auto 20px;
     border-radius: 20px;
     box-shadow: 0 20px 30px rgba(0,0,0,0.3);
     border: 4px solid gold;
-    display: block;
-    margin: 0 auto 20px;
 }
 
 .modal-text {
@@ -305,16 +306,7 @@ body {
 
 /* ========== МОБИЛЬНЫЕ НАСТРОЙКИ ========== */
 
-/* Планшеты (горизонтальная ориентация) */
-@media (max-width: 1024px) {
-    .cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 15px;
-        padding: 15px;
-    }
-}
-
-/* Планшеты (вертикальная ориентация) и большие телефоны */
+/* Планшеты */
 @media (max-width: 768px) {
     body {
         padding: 8px;
@@ -334,9 +326,9 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        padding: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
     }
     
     .card-number {
@@ -357,7 +349,7 @@ body {
     }
     
     .modal-image {
-        width: 200px;
+        max-width: 200px;
     }
     
     #modalTitle {
@@ -397,7 +389,7 @@ body {
     }
     
     .page-title {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
     
     .subtitle {
@@ -405,9 +397,9 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
-        gap: 5px;
-        padding: 5px;
+        grid-template-columns: repeat(2, 1fr); /* Для 10 карточек оставляем 2 в ряд */
+        gap: 8px;
+        padding: 8px;
     }
     
     .card {
@@ -427,7 +419,7 @@ body {
     }
     
     .modal-image {
-        width: 150px;
+        max-width: 150px;
     }
     
     #modalTitle {
@@ -452,15 +444,15 @@ body {
     }
 }
 
-/* Очень маленькие телефоны (iPhone SE и подобные) */
+/* Очень маленькие телефоны */
 @media (max-width: 360px) {
     .page-title {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     
     .cards-container {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 4px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
     }
     
     .card-number {
@@ -469,19 +461,19 @@ body {
     }
     
     .modal-image {
-        width: 120px;
+        max-width: 120px;
     }
 }
 
-/* Альбомная ориентация на телефонах */
+/* Альбомная ориентация */
 @media (max-height: 480px) and (orientation: landscape) {
     .cards-container {
-        grid-template-columns: repeat(6, 1fr); /* 6 карточек в ряд в горизонтальном режиме */
-        gap: 8px;
+        grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд в горизонтальном режиме */
+        gap: 10px;
     }
     
     .modal-content {
-        margin: 1% auto;
+        margin: 2% auto;
         padding: 15px;
     }
     
@@ -490,6 +482,6 @@ body {
     }
     
     .modal-image {
-        width: 150px;
+        max-width: 150px;
     }
 }
