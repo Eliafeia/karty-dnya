@@ -326,7 +326,7 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
         padding: 15px;
     }
@@ -397,7 +397,7 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(2, 1fr); /* Для 10 карточек оставляем 2 в ряд */
+        grid-template-columns: repeat(3, 1fr); /* Для 10 карточек оставляем 2 в ряд */
         gap: 8px;
         padding: 8px;
     }
@@ -451,7 +451,7 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 5px;
     }
     
@@ -485,3 +485,4 @@ body {
         max-width: 150px;
     }
 }
+
